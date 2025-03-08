@@ -1,0 +1,159 @@
+/* General Styles */
+
+
+/* Navbar */
+.navbar {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: auto; /* Allow height to adjust based on content */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+.logo img {
+    height: auto; /* Ensure image height is auto */
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0%;
+    height: 3px;
+    background-color: #FF6B4A; /* Change this color as needed */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 50%;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 200px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: black;
+    font-size: 13px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #ddd;
+}
+
+/* Icons */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons a {
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.cart-badge {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: relative;
+    top: -10px;
+    left: -5px;
+}
+
+/* Menu Icon (Mobile) */
+.menu-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .icons {
+        position: absolute;
+        right: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+}
